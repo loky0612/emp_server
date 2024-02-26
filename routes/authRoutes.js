@@ -6,7 +6,7 @@ const { test, addCard, checkUniqueness, getCardMembers, checkUser, books, addRen
 router.use(
     cors({
         credentials : true,
-        origin : 'http://localhost:3000'
+        origin : 'http://emp-management-app.s3-website.ap-south-1.amazonaws.com'
     })
 );
 
