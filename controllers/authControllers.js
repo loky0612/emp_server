@@ -36,14 +36,14 @@ const getEmployee = (req, res) => {
 // }
 
 const addEmployee = (req, res) => {
-    const { id, name, dept, desig, dob, gender, salary, notice, days } = req.body;
+    const { id, name, dept, desig, dob, gender, salary, notice, days, email, password } = req.body;
     const notificationMessage = `Employee of ID ${id} is added to DB successfully`;
     const currentTime = new Date();
     const formattedTime = format(currentTime, 'dd-MM-yyyy hh:mm:ss aa');
     console.log(formattedTime);
     const status = "unread";
-    let empSql = "INSERT INTO emp_details (id, name, dept, desig, dob, gender, salary, notice, days) VALUES (?,?,?,?,?,?,?,?,?)";
-    let empValues = [id, name, dept, desig, dob, gender, salary, notice, days];
+    let empSql = "INSERT INTO emp_details (id, name, dept, desig, dob, gender, salary, notice, days, email, password) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+    let empValues = [id, name, dept, desig, dob, gender, salary, notice, days, email, password];
 
     let notificationSql = "INSERT INTO notifications (alert, time, status) VALUES (?, ?, ?)";
     let notificationValues = [notificationMessage, formattedTime, status];
